@@ -1,0 +1,83 @@
+{
+  "config.version" : "2.0",
+  "config.project.from.csv" : "false",
+  "config.encoding" : "UTF-8",
+  "config.email.suffix" : "@",
+  "config.field.mappings" : {
+    "Status" : {
+      "jira.field" : "status"
+    },
+    "Comment" : {
+      "jira.field" : "comment"
+    },
+    "Description" : {
+      "jira.field" : "summary"
+    },
+    "Work Item Type" : {
+      "jira.field" : "issuetype"
+    },
+    "Created Date" : {
+      "jira.field" : "created"
+    },
+    "Priority" : {
+      "jira.field" : "priority"
+    },
+    "Comments" : {
+      "jira.field" : "comment"
+    },
+    "Reporter" : {
+      "jira.field" : "reporter"
+    },
+    "AmberCAT Reference" : {
+      "existing.custom.field" : "10102"
+    },
+    "Development Reference" : {
+      "existing.custom.field" : "11201"
+    },
+    "Third Party Reference" : {
+      "existing.custom.field" : "11200"
+    },
+    "Due Date" : {
+      "jira.field" : "duedate"
+    }
+  },
+  "config.value.mappings" : {
+    "Status" : {
+      "Estimate" : "10604",
+      "Development" : "10408",
+      "UAT" : "10608",
+      "Mandate" : "10601",
+      "Cancelled" : "6",
+      "Pre-Mandate" : "1",
+      "Design Review" : "10606",
+      "RFC" : "10603",
+      "CR" : "10602"
+    },
+    "Work Item Type" : {
+      "Clarification" : "10601",
+      "RFC" : "10600"
+    },
+    "Priority" : {
+      "High" : "2",
+      "Low" : "4",
+      "Medium" : "3"
+    },
+    "Reporter" : {
+      "Mitul" : "Mitul",
+      "Angela" : "Angela",
+      "Raj" : "Raj",
+      "Richard Criddle" : "Richard Criddle",
+      "Raj Channa" : "Raj Channa"
+    }
+  },
+  "config.delimiter" : ",",
+  "config.project" : {
+    "project.type" : null,
+    "project.key" : "HND",
+    "project.description" : null,
+    "project.url" : null,
+    "project.name" : "Harvey Nichols Dedicated",
+    "project.lead" : null
+  },
+  "config.date.format" : "dd/MM/yyyy"
+}
