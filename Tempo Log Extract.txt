@@ -1,0 +1,76 @@
+2016-07-07 11:20:08,988 http-bio-8443-exec-19 ERROR richard 680x7258x1 km286r 192.168.1.119 /browse/YC-2 [c.a.j.web.component.ModuleWebComponentImpl] An exception occured while rendering the web panel: is.origo.jira.tempo-plugin:collaboratorsmodule (null)
+com.atlassian.activeobjects.internal.ActiveObjectsInitException: bundle [com.tempoplugin.tempo-plan-core]
+	at com.atlassian.activeobjects.osgi.TenantAwareActiveObjects$1$1$1.call(TenantAwareActiveObjects.java:95)
+	at com.atlassian.activeobjects.osgi.TenantAwareActiveObjects$1$1$1.call(TenantAwareActiveObjects.java:86)
+	at com.atlassian.sal.core.executor.ThreadLocalDelegateCallable.call(ThreadLocalDelegateCallable.java:42)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.atlassian.activeobjects.internal.ActiveObjectsSqlException: There was a SQL exception thrown by the Active Objects library:
+Database:
+	- name:MySQL
+	- version:5.6.29-log
+	- minor version:6
+	- major version:5
+	- name:MySQL Connector Java
+	- version:mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+
+java.sql.SQLException: Error on rename of '.\jiradb\#sql-1074_d70a5.frm' to '.\jiradb\ao_2d3bea_comment.frm' (Errcode: 13 - Permission denied)
+	at com.atlassian.activeobjects.internal.EntityManagedActiveObjects.migrate(EntityManagedActiveObjects.java:47)
+	at com.atlassian.activeobjects.internal.AbstractActiveObjectsFactory$1.doInTransaction(AbstractActiveObjectsFactory.java:77)
+	at com.atlassian.activeobjects.internal.AbstractActiveObjectsFactory$1.doInTransaction(AbstractActiveObjectsFactory.java:72)
+	at com.atlassian.sal.core.transaction.HostContextTransactionTemplate$1.doInTransaction(HostContextTransactionTemplate.java:25)
+	at com.atlassian.jira.DefaultHostContextAccessor.doInTransaction(DefaultHostContextAccessor.java:34)
+	... 2 filtered
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.atlassian.plugin.util.ContextClassLoaderSettingInvocationHandler.invoke(ContextClassLoaderSettingInvocationHandler.java:26)
+	at com.sun.proxy.$Proxy365.doInTransaction(Unknown Source)
+	... 2 filtered
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.atlassian.plugin.osgi.bridge.external.HostComponentFactoryBean$DynamicServiceInvocationHandler.invoke(HostComponentFactoryBean.java:136)
+	at com.sun.proxy.$Proxy365.doInTransaction(Unknown Source)
+	at com.atlassian.sal.core.transaction.HostContextTransactionTemplate.execute(HostContextTransactionTemplate.java:21)
+	... 2 filtered
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.eclipse.gemini.blueprint.service.importer.support.internal.aop.ServiceInvoker.doInvoke(ServiceInvoker.java:56)
+	at org.eclipse.gemini.blueprint.service.importer.support.internal.aop.ServiceInvoker.invoke(ServiceInvoker.java:60)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:133)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:121)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.eclipse.gemini.blueprint.service.util.internal.aop.ServiceTCCLInterceptor.invokeUnprivileged(ServiceTCCLInterceptor.java:70)
+	at org.eclipse.gemini.blueprint.service.util.internal.aop.ServiceTCCLInterceptor.invoke(ServiceTCCLInterceptor.java:53)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.eclipse.gemini.blueprint.service.importer.support.LocalBundleContextAdvice.invoke(LocalBundleContextAdvice.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:133)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:121)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy898.execute(Unknown Source)
+	at com.atlassian.activeobjects.internal.AbstractActiveObjectsFactory.create(AbstractActiveObjectsFactory.java:72)
+	at com.atlassian.activeobjects.internal.DelegatingActiveObjectsFactory.create(DelegatingActiveObjectsFactory.java:32)
+	at com.atlassian.activeobjects.osgi.TenantAwareActiveObjects$1$1$1.call(TenantAwareActiveObjects.java:91)
+	... 6 more
+Caused by: java.sql.SQLException: Error on rename of '.\jiradb\#sql-1074_d70a5.frm' to '.\jiradb\ao_2d3bea_comment.frm' (Errcode: 13 - Permission denied)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2478)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2625)
+	at com.mysql.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1541)
+	at com.mysql.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2605)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1469)
+	at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:234)
+	at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:234)
+	at net.java.ao.DatabaseProvider.executeUpdate(DatabaseProvider.java:2246)
+	at net.java.ao.DatabaseProvider.executeUpdateForAction(DatabaseProvider.java:2302)
+	at net.java.ao.DatabaseProvider.executeUpdatesForActions(DatabaseProvider.java:2274)
+	at net.java.ao.schema.SchemaGenerator.migrate(SchemaGenerator.java:91)
+	at net.java.ao.EntityManager.migrate(EntityManager.java:128)
+	at com.atlassian.activeobjects.internal.EntityManagedActiveObjects.migrate(EntityManagedActiveObjects.java:45)
+	... 44 more
+2016-07-07 11:20:09,066 http-bio-8443-exec-19 WARN richard 680x7258x1 km286r 192.168.1.119 /browse/YC-2 [c.atlassian.ozymandias.SafePluginPointAccess] Unable to run plugin code because of 'com.atlassian.activeobjects.internal.ActiveObjectsInitException - bundle [com.tempoplugin.tempo-plan-core]'.
+2016-07-07 11:20:09,066 http-bio-8443-exec-19 WARN richard 680x7258x1 km286r 192.168.1.119 /browse/YC-2 [c.atlassian.ozymandias.SafePluginPointAccess] Unable to run plugin code because of 'com.atlassian.activeobjects.internal.ActiveObjectsInitException - bundle [com.tempoplugin.tempo-plan-core]'.
