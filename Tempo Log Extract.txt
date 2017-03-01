@@ -1,6 +1,3 @@
-ADDED LINES
-
-
 2016-07-07 11:20:08,988 http-bio-8443-exec-19 ERROR richard 680x7258x1 km286r 192.168.1.119 /browse/YC-2 [c.a.j.web.component.ModuleWebComponentImpl] An exception occured while rendering the web panel: is.origo.jira.tempo-plugin:collaboratorsmodule (null)
 com.atlassian.activeobjects.internal.ActiveObjectsInitException: bundle [com.tempoplugin.tempo-plan-core]
 	at com.atlassian.activeobjects.osgi.TenantAwareActiveObjects$1$1$1.call(TenantAwareActiveObjects.java:95)
